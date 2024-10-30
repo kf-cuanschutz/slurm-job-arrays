@@ -10,7 +10,7 @@
 #SBATCH --error=cellbender_gpu.%j.err
 #SBATCH --mail-type=BEGIN,FAIL,END # Feel free to change it.
 # Whom to send the email to
-#SBATCH --mail-user=lauren.vanderlindeno@cuanschutz.edu
+#SBATCH --mail-user=foo.foo@cuanschutz.edu
 #SBATCH --array=1-72 #Call for the job array with 72 indexes representing each job for the 72 samples 
 
 
