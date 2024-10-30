@@ -24,17 +24,17 @@ mkdir -pv $TMP
 module load anaconda
 conda activate cellbender
 
-# Loop through samples from ARA08_01 to ARA08_72
+# Loop through samples from RESULT_01 to RESULT_72
 for i in {01..72}
 do
-    # Create the sample name (e.g., ARA08_01, ARA08_02...)
-    SAMPLE="ARA08_${i}"
+    # Create the sample name (e.g., RESULT_01, RESULT_02...)
+    SAMPLE="RESULT_${i}"
     # Create a directory for each sample
     mkdir $SAMPLE
     # Run cellbender remove-background for each sample
     cellbender remove-background \
         --cuda \
         --fpr 0.1 \
-        --input /pl/active/foolab/shared/ACE_ARA08/03_Assay_Data/CITEseq/$SAMPLE/outs/multi/count/raw_feature_bc_matrix.h5 \
+        --input /pl/active/foolab/shared/$SAMPLE/raw_feature_bc_matrix.h5 \
         --output $SAMPLE/output.h5
 done
