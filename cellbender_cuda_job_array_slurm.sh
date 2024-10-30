@@ -31,16 +31,16 @@ conda activate cellbender
 echo "The Slurm array taskID is ${SLURM_ARRAY_TASK_ID}"
 export PatientID=$SLURM_ARRAY_TASK_ID
 
-# Each $SLURM_ARRAY_TASK_ID represents an  ARA08_ number
-# Create the sample name (e.g., ARA08_01, ARA08_02...)
-SAMPLE="ARA08_${PatientID}"
+# Each $SLURM_ARRAY_TASK_ID represents an  RESULT_ number
+# Create the sample name (e.g., RESULT_01, RESULT_02...)
+SAMPLE="RESULT_${PatientID}"
 # Create a directory for each sample
 mkdir $SAMPLE
 # Run cellbender remove-background for each sample
 cellbender remove-background \
        --cuda \
        --fpr 0.1 \
-       --input /pl/active/foolab/shared/ACE_ARA08/03_Assay_Data/CITEseq/$SAMPLE/outs/multi/count/raw_feature_bc_matrix.h5 \
+       --input /pl/active/foolab/shared/$SAMPLE/raw_feature_bc_matrix.h5 \
        --output $SAMPLE/output.h5
 
 ~
