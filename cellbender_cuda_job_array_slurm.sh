@@ -26,16 +26,6 @@ mkdir -pv $TMP
 module load anaconda
 conda activate cellbender
 
-if [[ $SLURM_ARRAY_TASK_ID -lt 10 ]];then
-        
-	echo "The Slurm array taskID is less than 10 and is ${SLURM_ARRAY_TASK_ID}"
-	export tmp_PatientID=$SLURM_ARRAY_TASK_ID
-        export PatientID="0$tmp_PatientID"
-else
-	echo "The Slurm array taskID is greater than 10 and is ${SLURM_ARRAY_TASK_ID}"
-        export PatientID=$SLURM_ARRAY_TASK_ID
-
-fi
 
 # Exporting the sampleID with SLURM_ARRAY_TASK_ID.
 echo "The Slurm array taskID is ${SLURM_ARRAY_TASK_ID}"
