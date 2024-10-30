@@ -28,7 +28,7 @@ conda activate cellbender
 for i in {1..72}
 do
     # Create the sample name (e.g., RESULT_1, RESULT_2...)
-    SAMPLE="RESULT_${i}"
+    SAMPLE="IndexID_${i}"
     # Create a directory for each sample
     mkdir $SAMPLE
     # Run cellbender remove-background for each sample
