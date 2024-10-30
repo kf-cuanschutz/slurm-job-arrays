@@ -29,11 +29,11 @@ conda activate cellbender
 
 # Exporting the sampleID with SLURM_ARRAY_TASK_ID.
 echo "The Slurm array taskID is ${SLURM_ARRAY_TASK_ID}"
-export PatientID=$SLURM_ARRAY_TASK_ID
+export IndexID=$SLURM_ARRAY_TASK_ID
 
 # Each $SLURM_ARRAY_TASK_ID represents an  RESULT_ number
 # Create the sample name (e.g., RESULT_1, RESULT_2...)
-SAMPLE="RESULT_${PatientID}"
+SAMPLE="RESULT_${IndexID}"
 # Create a directory for each sample
 mkdir $SAMPLE
 # Run cellbender remove-background for each sample
