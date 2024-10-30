@@ -32,7 +32,7 @@ echo "The Slurm array taskID is ${SLURM_ARRAY_TASK_ID}"
 export PatientID=$SLURM_ARRAY_TASK_ID
 
 # Each $SLURM_ARRAY_TASK_ID represents an  RESULT_ number
-# Create the sample name (e.g., RESULT_01, RESULT_02...)
+# Create the sample name (e.g., RESULT_1, RESULT_2...)
 SAMPLE="RESULT_${PatientID}"
 # Create a directory for each sample
 mkdir $SAMPLE
