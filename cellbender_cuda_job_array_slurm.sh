@@ -43,4 +43,3 @@ cellbender remove-background \
        --input /pl/active/foolab/shared/$SAMPLE/raw_feature_bc_matrix.h5 \
        --output $SAMPLE/output.h5
 
-~
