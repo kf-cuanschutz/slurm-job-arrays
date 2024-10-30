@@ -37,6 +37,10 @@ else
 
 fi
 
+# Exporting the sampleID with SLURM_ARRAY_TASK_ID.
+echo "The Slurm array taskID is ${SLURM_ARRAY_TASK_ID}"
+export PatientID=$SLURM_ARRAY_TASK_ID
+
 # Each $SLURM_ARRAY_TASK_ID represents an  ARA08_ number
 # Create the sample name (e.g., ARA08_01, ARA08_02...)
 SAMPLE="ARA08_${PatientID}"
